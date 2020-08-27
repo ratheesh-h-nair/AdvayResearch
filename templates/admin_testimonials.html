@@ -1,0 +1,116 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+<h1 class="h3 mb-2 text-gray-800">Testimonials</h1>
+          <p class="mb-4">Testimonials
+            <a href="#" data-toggle="modal" data-target="#addmodal" class="btn btn-success btn-circle"><i class="fa fa-plus"></i></a>
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Testimonials</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+
+                    <tr>
+                      <th>Id</th>
+
+                      <th>Name</th>
+
+                      <th>Location</th>
+                      <th>Comments</th>
+                      <th>Display on Home</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                       <th>Id</th>
+
+                      <th>Name</th>
+
+                      <th>Location</th>
+                      <th>Comments</th>
+                      <th>Display on Home</th>
+                      <th>Action</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                  {% for i in range(0,len)%}
+                 <td >{{result[i][0]}}</td>
+                 <td>{{result[i][1]}}</td>
+                 <td>{{result[i][2]}}</td>
+                 <td>{{result[i][3]}}</td>
+                 <td>{{result[i][4]}}</td>
+                  <td>
+                    <a href="/admin/del-test/{{result[i][0]}}" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                  </td>
+                </tr>
+                {%endfor%}
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+</div>
+
+
+  <div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Testimonails</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div>
+
+          <form role="form" action="/admin/add-testimonials" method="POST" enctype="multipart/form-data">
+                <div class="card-body">
+
+
+                  <div class="form-group">
+                    <label for="Name">Name<span style="color:red">*</span></label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter Name" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Name">Location<span style="color:red">*</span></label>
+                    <input type="text" class="form-control" name="Location" placeholder="Enter Location" required>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label for="Name">Comments<span style="color:red">*</span></label>
+                    <textarea class="form-control" rows="4" placeholder="Enter ..." name="comment" required></textarea>
+                  </div>
+
+                  <div class="form-group">
+                  <label for="displayonhome">Display on Home</label><br>
+                      <input type="radio" id="displayonhome" name="displayonhome" value="1">
+                      <label for="displayonhome">Yes</label><br>
+                      <input type="radio" id="displayonhome" name="displayonhome" value="0" checked>
+                      <label for="displayonhome">No</label><br>
+                  </div>
+                <!-- /.card-body -->
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <div class="card-footer">
+                            <button type="submit" class="btn btn-primary" name="Submit" value="Submit">Submit</button>
+                  </div>
+                </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+<div>
+</div>
+
+</div>
+        <!-- /.container-fluid -->
+{% endblock %}

@@ -1,0 +1,522 @@
+{% extends 'homeheader.html' %}
+{% block content %}
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <img src="{{ url_for('static', filename='assets/img/logo.jpg')}}" class="img-fluid animated" alt="" height="280px" width="280px">
+<!--          <h1 data-aos="fade-up">Advay Research</h1>-->
+          <h2 data-aos="fade-up" data-aos-delay="400" style="font-size: 25px;">We the team of researchers assist in providing feasible research and development solutions fulfilling the research expectations of each individual client.</h2>
+          <div data-aos="fade-up" data-aos-delay="800">
+            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+          <img src="{{ url_for('static', filename='assets/img/hero-img.png')}}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+            <p style="font-size: 22px;">
+               The organization’s assistance focus towards Academicians, Industry Experts, Research Scholars and Master Students of all domains seeking research - 
+
+            </p>
+            <ul>
+
+              <b style="font-size: 18px;"><li><i class="ri-check-double-line"></i> Implementation</li>
+              <li><i class="ri-check-double-line"></i> Paper Writing</li>
+              <li><i class="ri-check-double-line"></i> Technical and Language Corrections</li>
+              <li><i class="ri-check-double-line"></i> Plagiarism Check </li>
+              <li><i class="ri-check-double-line"></i> Statistical Analysis </li>
+                <li><i class="ri-check-double-line"></i>Quick Publication Support </li>
+            </b> </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <p>
+            <h3 style="color:blue">For us, to provide insights and help you on your research<br>
+Call/Whatsapp Today!</h3>
+              <p style="font-size: 18px;"><a href="https://wa.me/message/MW4EG3GK74HXL1" class="twitter img-fluid animated" ><i class="icofont-brand-whatsapp img-fluid animated" style="font-size:48px;"></i></a>  Phone : +91 95975 93499</p><br>
+            <p style="font-size: 18px;"><a href="mailto:info@advayresearch.com" class="facebook"><i class="icofont-email img-fluid animated" style="font-size:48px;"></i></a>   info@advayresearch.com</p>
+
+            </p>
+            <a href="#about" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row">
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
+            <img src="/static/assets/img/counts.png" alt="Counts Image" class="img-fluid">
+          </div>
+
+          <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
+            <div class="content d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="icofont-simple-smile"></i>
+                    <span data-toggle="counter-up">309</span>
+                    <p style="font-size: 18px;"><strong>Happy Clients</strong></p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="icofont-document-folder"></i>
+                    <span data-toggle="counter-up">419</span>
+                    <p style="font-size: 18px;"><strong>Projects</strong><p>
+                  </div>
+                </div>
+
+<!--                <div class="col-md-6 d-md-flex align-items-md-stretch">-->
+<!--                  <div class="count-box">-->
+<!--                    <i class="icofont-clock-time"></i>-->
+<!--                    <span data-toggle="counter-up">2</span>-->
+<!--                    <p style="font-size: 18px;"><strong>Years of experience</strong></p>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-md-6 d-md-flex align-items-md-stretch">-->
+<!--                  <div class="count-box">-->
+<!--                    <i class="icofont-award"></i>-->
+<!--                    <span data-toggle="counter-up">10</span>-->
+<!--                    <p style="font-size: 18px;"><strong>Awards</strong></p>-->
+<!--                  </div>-->
+<!--                </div>-->
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Services</h2>
+          <p >Call us with your data and/or concept.<br>Our researchers take effort to make your research work hassle free. The services offered are:</p>
+        </div>
+         <div class="row">
+          <table>
+
+            <tbody>
+            {% for i in range(lenserv) %}
+            <tr>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                  <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                  <div class="icon"><i class="bx bx-file"></i></div>
+                  <h4 class="title"><a href="/service-detail/{{services[i][0]}}">{{services[i][1]}}</a></h4>
+<!--                  <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>-->
+                </div>
+              </div>
+
+            </tr>
+
+
+
+            {% endfor %}
+            </tbody>
+          </table>
+         </div>
+
+          <br><br>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Why Advay ?</h2>
+          <p></p>
+        </div>
+
+
+
+        <div class="row" data-aos="fade-up" data-aos-delay="300">
+          {% for i in range(lenfr) %}
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <i class="ri-star-fill" style="color: #47aeff;"></i>
+              <h3><a href="#">{{features[i][1]}}</a></h3>
+            </div>
+          </div>
+          {% endfor %}
+
+
+
+      </div>
+      </div>
+    </section><!-- End Features Section -->
+    
+    
+    <!--Get a Quote-->
+
+      <section id="getquote" class="contact">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Get a Favourable Quote</h2>
+        </div>
+        
+        <!--{% with messages = get_flashed_messages(with_categories=true) %}-->
+        <!--  {% for category, message in messages %}-->
+        <!--    <div class="alert-{{ category }}">{{ message }}</div>-->
+        <!--{% endfor %}-->
+        <!--{% endwith %}-->
+        <div class="row">
+
+            <form id="frm"  style="align-items: center;display: inline-block;margin: auto;">
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Name<span style="color:red">*</span></label>
+            <input type="text" size="50" class="form-control" aria-describedby="emailHelp" name="name" placeholder="Enter Name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email<span style="color:red">*</span></label>
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter Email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Phone<span style="color:red">*</span></label>
+            <input type="text" class="form-control" name="phone" aria-describedby="emailHelp" placeholder="Enter Phone" required>
+          </div>
+
+           <div class="form-group">
+            <label for="exampleInputEmail1">Type of Service<span style="color:red">*</span></label>
+            <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="service" name="service" required>
+                      <option value="" disabled selected>Select Type of Service</option>
+                      <option value="Research Paper Writing">Research Paper Writing</option>
+                      <option value="Literature Review Writing">Literature Review Writing</option>
+                      <option value="Conference/Seminar Paper Writing">Conference/Seminar Paper Writing</option>
+                      <option value="Synopsis Writing" >Synopsis Writing</option>
+                      <option value="Thesis/Dissertation Writing" >Thesis/Dissertation Writing</option>
+                      <option value="Research Proposal" >Research Proposal</option>
+                      <option value="Book Chapter Proposal" >Book Chapter Proposal</option>
+                      <option value="Book Chapter Writing" >Book Chapter Writing</option>
+                      <option value="Technical (Assignment/Essay) Writing" >Technical (Assignment/Essay) Writing</option>
+                      <option value="Research Paper Formatting" >Research Paper Formatting</option>
+                      <option value="Manuscript Review Editing" >Manuscript Review Editing</option>
+                      <option value="Professional Presentations" >Professional Presentations</option>
+                      <option value="Research Implementation" >Research Implementation</option>
+                      <option value="Statistical Analysis" >Statistical Analysis</option>
+                      <option value="Plagiarism Check and Correction" >Plagiarism Check and Correction</option>
+                      <option value="English Language Check and Correction" >English Language Check and Correction</option>
+                      <option value="Journal Publication Assistance" >Journal Publication Assistance</option>
+                      <option value="Conference Publication Assistance">Conference Publication Assistance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Service Urgency<span style="color:red">*</span></label>
+            <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="urgency" name="urgency" required >
+                      <option value="" disabled selected>Select Urgency</option>
+                        <option value="3 Days">3 Days</option>
+                      <option value="5 Days">5 Days</option>
+                      <option value="7 Days">7 Days</option>
+                      <option value="10 Days">10 Days</option>
+                      <option value="14 Days">14 Days</option>
+                      <option value="21 Days">21 Days</option>
+                      <option value="30 Days">30 Days</option>
+                      <option value="45 Days">45 Days</option>
+                      <option value="60 Days">60 Days</option>
+                      <option value="70 Days">70 Days</option>
+                      <option value="90 Days">90 Days</option>
+
+            </select>
+          </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">No. of Pages</label>
+            <input type="number" class="form-control" id="pages" placeholder="Enter No. of Pages" name="pages" min="1" max="200" required>
+          </div>
+
+           <div class="form-group">
+            <label for="exampleInputEmail1">Domain<span style="color:red">*</span></label>
+            <input type="text" class="form-control" name="domain" aria-describedby="emailHelp" placeholder="Enter Domain" required>
+          </div>
+
+           <div class="form-group">
+          <label for="exampleInputEmail1">Reference Style<span style="color:red">*</span></label>
+            <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="reference" name="reference" required >
+                      <option value="" disabled selected>Select Reference Style</option>
+                        <option value="MLA">MLA</option>
+                      <option value="APA">APA</option>
+                      <option value="Chicago">Chicago</option>
+                      <option value="Harvard">Harvard</option>
+                      <option value="Vancouver">Vancouver</option>
+
+            </select>
+           </div>
+
+
+          <div class="form-group">
+                  <label for="displayonhome">Whether Implementation Required? </label><br>
+                       <input type="radio" name="ynRadio" class="radioBtn" value="yes" checked/> Yes
+                        <input type="radio" name="ynRadio" class="radioBtn" value="no" /> No
+
+
+                  </div>
+
+           <div class="form-group"  >
+            <label for="Name">Implementation Description <span style="color:red">*</span></label>
+            <textarea id="textField" class="form-control" rows="4" placeholder="Enter ..." name="implementation"></textarea>
+          </div>
+
+          <button type="button" id="submit" class="btn btn-primary">Submit</button><br><br>
+
+            <div><b>
+            <div id="statuses" style="color:blue;align-items: center;display: inline-block;margin: auto;"></div>
+              <div id="msgs" style="color:red;align-items: center;display: inline-block;margin: auto;"></div></b>
+          </div>
+        </form>
+
+        </div>
+      </div>
+    </section>
+
+
+<!--      End Get A Quote-->
+
+
+
+    <!--    Askus Section-->
+     <section id="askus" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Ask Us</h2>
+        </div>
+
+        <div class="row">
+           <p>
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#post"><b>Quality and Standards of Advay</b></a></li>
+            <li><a data-toggle="tab" href="#apply"><b>Service Flow</b></a></li>
+          </ul>
+
+
+
+        <div class="tab-content"><br>
+
+
+        <div id="post" class="tab-pane fade in active">
+
+          <div class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <p style="font-size: 28px;"><b>Quality and Standards of Advay</b></p>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+            <ul>
+
+              {% for i in range(0,lenqs) %}
+              <li style="font-size: 18px;"><i class="ri-check-double-line"></i> {{qsdata[i][1]}}</li>
+              {% endfor %}
+             </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+        </div>
+
+        <div id="apply" class="tab-pane fade">
+
+
+          <div id="dfg" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+            <ul>
+              {% for i in range(asklen) %}
+              <center><img src="/static/assets/img/ASKUS/{{ask[i][2]}}" style="text-align: center;margin-left:80%"   width="250px" height="250px"></center>
+              {% endfor %}
+             </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+        </div>
+        </div>
+        </div>
+      </div>
+    </section>
+<!--    end Askus Section-->
+
+
+<!--    Career Opportunity Section-->
+   <section id="Careers" class="contact">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2>Career Opportunity</h2>
+      </div>
+
+      <div class="row">
+        {% for i in range(careerlen) %}
+            <p class="text-justify" style="font-size: 18px;text-align:center">{{career[i][1]}} </p>
+            {% endfor %}
+
+
+
+    </div>
+    </div>
+  </section>
+
+<!--    end Career Opportunity Section-->
+
+
+
+
+
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2 style="font-size: 28px;color:#ffff">Testimonials</h2>
+          <p style="font-size: 18px;color:#ffff">Our Happy Clients</p>
+        </div>
+
+        <div class="owl-carousel testimonials-carousel" data-aos="fade-up" data-aos-delay="200">
+
+          {% for i in range(lentest) %}
+
+
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+<!--              <img src="/static/assets/img/testimonials/{{testimonials[i][0]}}" class="testimonial-img" alt="">-->
+              <h3>{{testimonials[i][0]}}</h3>
+              <h4>{{testimonials[i][1]}}</h4>
+<!--              <h4>{{testimonials[i][2]}}</h4>-->
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                {{testimonials[i][2]}}
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+          {% endfor %}
+
+
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contact Us</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-about">
+              <h3>Advay Research</h3>
+              <p style="font-size: 18px">Get introduced. <br>Contact the Director directly by <br>Email/Call/Whatsapp..</p>
+              <div class="social-links">
+                <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+                <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+                <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="info">
+              <div>
+                <i class="ri-map-pin-line"></i>
+                <p>Sri Ram Garden, Vedapatti, Coimbatore – 641007,<br> Tamilnadu, India.</p>
+              </div>
+
+              <div>
+                <i class="ri-mail-send-line"></i>
+                <p>info@advayresearch.com,</p>
+              </div>
+
+              <div>
+                <i class="ri-phone-line"></i>
+                <p>+91 95975 93499</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <img src="/static/assets/img/loc.png" width="400px" height="250px">
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+{% endblock %}

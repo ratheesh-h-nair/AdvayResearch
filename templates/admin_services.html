@@ -1,0 +1,184 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+<h1 class="h3 mb-2 text-gray-800">Services</h1>
+          <p class="mb-4">Services
+            <a href="#" data-toggle="modal" data-target="#addmodal" class="btn btn-success btn-circle"><i class="fa fa-plus"></i></a>
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Services</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+
+                    <tr>
+                      <th>Id</th>
+                      <th>Name</th>
+                      <th>Image</th>
+                      <th>Description</th>
+                      <th>Points</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Id</th>
+                      <th>Name</th>
+                      <th>Image</th>
+                      <th>Description</th>
+                      <th>Points</th>
+                      <th>Action</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                  {% for i in range(0,len)%}
+                  <tr>
+
+                 <td >{{result[i][0]}}</td>
+                 <td>{{result[i][1]}}</td>
+                 <td><img src="/static/assets/img/Services/{{result[i][2]}}" height="50" width="50"></td>
+                 <td>{{result[i][3]}}</td>
+                 <td>{{result[i][4]}},{{result[i][5]}},{{result[i][6]}},{{result[i][7]}},{{result[i][8]}},{{result[i][9]}},{{result[i][10]}},{{result[i][11]}},
+                 {{result[i][12]}},{{result[i][13]}}</td>
+                  <td>
+                    <a href="/admin/del-services/{{result[i][0]}}" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                  </td>
+                </tr>
+                {%endfor%}
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+</div>
+
+
+  <div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Services</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div>
+
+          <form role="form" action="/admin/add-services" method="POST" enctype="multipart/form-data">
+                <div class="card-body">
+
+                <div class="form-group">
+                    <label>Choose Picture<span style="color:red">*</span></label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="image" id="image" required>
+                        <label class="custom-file-label" id="imagedata"></label>
+                      </div>
+                    </div>
+                  </div>
+
+
+                    <div class="form-group">
+
+                    <label for="Name">Category<span style="color:red">*</span></label>
+                    <select class="form-control" id="service_id" name="service_id">
+                      <option value="Research Paper Writing">Research Paper Writing</option>
+                      <option value="Literature Review Writing">Literature Review Writing</option>
+                      <option value="Conference/Seminar Paper Writing">Conference/Seminar Paper Writing</option>
+                      <option value="Synopsis Writing" >Synopsis Writing</option>
+                      <option value="Thesis/Dissertation Writing" >Thesis/Dissertation Writing</option>
+                      <option value="Research Proposal" >Research Proposal</option>
+                      <option value="Book Chapter Proposal" >Book Chapter Proposal</option>
+                      <option value="Book Chapter Writing" >Book Chapter Writing</option>
+                      <option value="Technical (Assignment/Essay) Writing" >Technical (Assignment/Essay) Writing</option>
+                      <option value="Research Paper Formatting" >Research Paper Formatting</option>
+                      <option value="Manuscript Review Editing" >Manuscript Review Editing</option>
+                      <option value="Professional Presentations" >Professional Presentations</option>
+                      <option value="Research Implementation" >Research Implementation</option>
+                      <option value="Statistical Analysis" >Statistical Analysis</option>
+                      <option value="Plagiarism Check and Correction" >Plagiarism Check and Correction</option>
+                      <option value="English Language Check and Correction" >English Language Check and Correction</option>
+                      <option value="Journal Publication Assistance" >Journal Publication Assistance</option>
+                      <option value="Conference Publication Assistance">Conference Publication Assistance</option>
+                    </select>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label for="Name">Comments</label>
+                    <textarea class="form-control" rows="4" placeholder="Enter ..." name="description" ></textarea>
+                  </div>
+                  
+                   <div class="form-group">
+                    <label for="Name">Point 1</label>
+                    <input type="text" class="form-control" name="pone" placeholder="Enter Project Title" >
+                  </div>
+                  
+                   <div class="form-group">
+                    <label for="Name">Point 2 </label>
+                    <input type="text" class="form-control" name="ptwo" placeholder="Enter Project Title" >
+                  </div>
+                  
+                   <div class="form-group">
+                    <label for="Name">Point 3</label>
+                    <input type="text" class="form-control" name="pthree" placeholder="Enter Project Title" >
+                  </div>
+                  
+                   <div class="form-group">
+                    <label for="Name">Point 4</label>
+                    <input type="text" class="form-control" name="pfour" placeholder="Enter Project Title" >
+                  </div>
+                  
+                   <div class="form-group">
+                    <label for="Name">Point 5</label>
+                    <input type="text" class="form-control" name="pfive" placeholder="Enter Project Title" >
+                  </div>
+                  
+                  
+                   <div class="form-group">
+                    <label for="Name">Point 6</label>
+                    <input type="text" class="form-control" name="psix" placeholder="Enter Project Title" >
+                  </div>
+                  
+                   <div class="form-group">
+                    <label for="Name">Point 7</label>
+                    <input type="text" class="form-control" name="pseven" placeholder="Enter Project Title" >
+                  </div>
+                  
+                   <div class="form-group">
+                    <label for="Name">Point 8</label>
+                    <input type="text" class="form-control" name="peight" placeholder="Enter Project Title" >
+                  </div>
+                  
+                   <div class="form-group">
+                    <label for="Name">Point 9</label>
+                    <input type="text" class="form-control" name="pnine" placeholder="Enter Project Title" >
+                  </div>
+                  
+                   <div class="form-group">
+                    <label for="Name">Point 10</label>
+                    <input type="text" class="form-control" name="pten" placeholder="Enter Project Title" >
+                  </div>
+                  
+
+                <!-- /.card-body -->
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <div class="card-footer">
+                            <button type="submit" class="btn btn-primary" name="Submit" value="Submit">Submit</button>
+                  </div>
+                </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+<div>
+
+</div>
+        <!-- /.container-fluid -->
+{% endblock %}
